@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorias dos Alimentos</title>
+    <title>Calculadora de Calorias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Calorias dos Alimentos</h1>
-    <ul>
-        <li>Maçã: 52 Kcal</li>
-        <li>Cheetos: 734 Kcal</li>
-        <li>Salmão: 255 Kcal</li>
-        <li>Alface: 15 Kcal</li>
-        <li>Sucrilhos: 2583 Kcal</li>
-        <li>Carne: 103 Kcal</li>
-        <li>Coca-cola: 760 Kcal</li>
-        <li>Oreo: 300 Kcal</li>
-        <li>Milho em lata: 107 Kcal</li>
-        <li>Hamburguer: 2112 Kcal</li>
-        <li>Sardinha em lata: 144 Kcal</li>
-        <li>Feijão: 3470 Kcal</li>
-        <li>Doritos: 504 Kcal</li>
-        <li>Grão de Bico: 2184 Kcal</li>
-        <li>Miojo: 1550 Kcal</li>
-        <li>Leite integral: 298 Kcal</li>
-        <li>Suco Kapo: 28 Kcal</li>
-        <li>Frango: 2180 Kcal</li>
-    </ul>
+    <h1>Calculadora de Calorias</h1>
+    <form id="caloriasForm">
+        <label>
+            <input type="checkbox" value="52" class="food"> Maçã (52 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="734" class="food"> Cheetos (734 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="255" class="food"> Salmão (255 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="15" class="food"> Alface (15 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="2583" class="food"> Sucrilhos (2583 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="103" class="food"> Carne (103 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="760" class="food"> Coca-cola (760 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="300" class="food"> Oreo (300 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="107" class="food"> Milho em lata (107 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="2112" class="food"> Hamburguer (2112 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="144" class="food"> Sardinha em lata (144 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="3470" class="food"> Feijão (3470 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="504" class="food"> Doritos (504 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="2184" class="food"> Grão de Bico (2184 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="1550" class="food"> Miojo (1550 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="298" class="food"> Leite integral (298 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="28" class="food"> Suco Kapo (28 Kcal)
+        </label>
+        <label>
+            <input type="checkbox" value="2180" class="food"> Frango (2180 Kcal)
+        </label>
+        <button type="button" onclick="calcularCalorias()">Calcular Calorias</button>
+    </form>
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularCalorias() {
+            const checkboxes = document.querySelectorAll('.food:checked');
+            let totalCalorias = 0;
+            checkboxes.forEach(checkbox => {
+                totalCalorias += parseInt(checkbox.value);
+            });
+            document.getElementById('resultado').innerText = `Total de Calorias: ${totalCalorias} Kcal`;
+        }
+    </script>
 </body>
 </html>
