@@ -1,4 +1,4 @@
-function CalcularCalorais():
+function CalcularCalorais() {
      const checkboxes = document.querySelectorAll('.food:checked');
             let totalCalorias = 0;
             checkboxes.forEach(checkbox => {
