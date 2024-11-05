@@ -1,0 +1,57 @@
+class Alimento:
+    def __init__(self, nome, calorias, preco, porcao):
+        self.nome = nome
+        self.calorias = calorias
+        self.preco = preco
+        self.porcao = porcao
+
+# Criando a lista de alimentos
+alimentos = [
+    Alimento("Maçã", 52, 19.90, "1 unidade"),
+    Alimento("Cheetos", 121, 12.80, "25 g"),
+    Alimento("Salmão", 255, 112.99, "100 g"),
+    Alimento("Alface", 6, 5.99, "40 g"),
+    Alimento("Sucrilhos Kellogg's", 110, 23.50, "30 g"),
+    Alimento("Carne contra filé", 135, 50.00, "100 g"),
+    Alimento("Coca-Cola", 85, 9.99, "200 ml"),
+    Alimento("Oreo", 163, 4.29, "36 g"),
+    Alimento("Milho em lata Quero", 43, 4.99, "50 g"),
+    Alimento("Hambúrguer congelado", 352, 20.90, "1 unidade"),
+    Alimento("Sardinha em lata Gomes da Costa", 144, 6.59, "75 g"),
+    Alimento("Feijão Carioca", 84, 7.99, "50 g"),
+    Alimento("Doritos", 252, 13.99, "25 g"),
+    Alimento("Grão de Bico", 114, 11.69, "70 g"),
+    Alimento("Miojo", 1550, 3.27, "85 g"),
+    Alimento("Leite Integral", 117, 6.19, "200 ml"),
+    Alimento("Suco Kapo Uva", 71, 2.19, "200 ml"),
+    Alimento("Frango", 187, 11.49, "100 g")
+]
+
+def mostrar_opcoes():
+    print("\nEscolha os alimentos abaixo e insira a quantidade em porções:")
+    for i, alimento in enumerate(alimentos, 1):
+        print(f"{i}. {alimento.nome} - {alimento.calorias} calorias por porção")
+
+def calcular_calorias():
+    total_calorias = 0
+    while True:
+        mostrar_opcoes()
+        try:
+            escolha = int(input("\nDigite o número do alimento que deseja adicionar (ou 0 para terminar): "))
+            if escolha == 0:
+                break
+            elif escolha < 1 or escolha > len(alimentos):
+                print("Escolha inválida! Tente novamente.")
+                continue
+            
+            quantidade = int(input(f"Quantas porções de {alimentos[escolha - 1].nome} você deseja adicionar? "))
+            total_calorias += alimentos[escolha - 1].calorias * quantidade
+            print(f"Você adicionou {quantidade} porção(ões) de {alimentos[escolha - 1].nome}, totalizando {alimentos[escolha - 1].calorias * quantidade} calorias.\n")
+        except ValueError:
+            print("Por favor, insira um número válido.")
+
+    print(f"\nTotal de calorias consumidas: {total_calorias} calorias")
+
+if __name__ == "__main__":
+    print("Calculadora de Calorias\n")
+    calcular_calorias()
