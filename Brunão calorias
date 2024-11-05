@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Calorias</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Calorias</h1>
+    <p>Escolha os alimentos e veja o total de calorias consumidas!</p>
+  </header>
+
+  <section class="alimentos">
+    <h2>Selecione os alimentos:</h2>
+    <div class="alimentos-lista">
+      <div class="alimento">
+        <img src="https://via.placeholder.com/150?text=Maçã" alt="Maçã">
+        <h3>Maçã</h3>
+        <p>52 Calorias</p>
+        <button onclick="adicionarAlimento('Maçã', 52)">Adicionar</button>
+      </div>
+      <div class="alimento">
+        <img src="https://via.placeholder.com/150?text=Cheetos" alt="Cheetos">
+        <h3>Cheetos</h3>
+        <p>121 Calorias</p>
+        <button onclick="adicionarAlimento('Cheetos', 121)">Adicionar</button>
+      </div>
+      <div class="alimento">
+        <img src="https://via.placeholder.com/150?text=Salmão" alt="Salmão">
+        <h3>Salmão</h3>
+        <p>255 Calorias</p>
+        <button onclick="adicionarAlimento('Salmão', 255)">Adicionar</button>
+      </div>
+      <!-- Adicione os outros alimentos de forma semelhante -->
+    </div>
+  </section>
+
+  <section class="resultado">
+    <h2>Total de Calorias:</h2>
+    <p id="total-calorias">0 Calorias</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Calculadora de Calorias</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
